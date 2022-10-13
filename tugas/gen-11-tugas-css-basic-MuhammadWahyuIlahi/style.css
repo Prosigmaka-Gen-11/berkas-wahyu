@@ -97,14 +97,14 @@ p.cabang {
     height: 65px;
     border: 1px solid black;
     overflow: auto;
+    display: inline-block;
 }
 .problem1 {
     background-color: coral;
-    margin-left: 300px;
     width: 250px;
     height: 65px;
     border: 1px solid black ;
     overflow: auto;
-    z-index: -1;
+    display: inline-block;
 }
 
