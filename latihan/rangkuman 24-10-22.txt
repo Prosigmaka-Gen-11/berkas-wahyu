@@ -1,0 +1,21 @@
+~~ Handling Forms ~~
+memasukkan inputan ke state
+
+input type (onChange)
+inputan di dlm -> evt.target.value
+pkek tag form biar bs di enter
+
+select -> options,radio,dll
+sama evt.target.value
+
+
+spread operator = unwrap (mengeluarkan array dr tempatnya) = ...namavariable
+
+
+dinamic object name pengganti .namaygmaudipanngil = ['namaygmaudipanngil']
+
+
+
+~ costum hook ~
+
+misal ribet lebih baik membuat file baru untuk menyimpan logic terus dipanggil
