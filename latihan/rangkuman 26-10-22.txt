@@ -1,0 +1,4 @@
+Asynhronous = setTimeout (Menunda apa yang harus di tampilkan) biasa digunakan utk pemanggilan API
+
+Promises = Salah satu cara utk membuat fungsi Asynhronous sendiri (then catch, await(try catch)
+
