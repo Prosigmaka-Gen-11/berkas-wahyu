@@ -2,3 +2,10 @@ Asynhronous = setTimeout (Menunda apa yang harus di tampilkan) biasa digunakan u
 
 Promises = Salah satu cara utk membuat fungsi Asynhronous sendiri (then catch, await(try catch)
 
+~ API ~
+install axio
+import
+masukin link nya
+Get / Post /put / delete
+
+
