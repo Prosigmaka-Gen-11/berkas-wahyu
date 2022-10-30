@@ -1,0 +1,11 @@
+~Buat API dari JSON server dan CRUD~
+
+npm install -g json-server
+
+hoppscotch extenstion install di browser
+
+hoppscotch salin link kita lalu send dan edit sesuai kebutahan get,post,put,dll
+
+buat function kemudian install axios
+
+
