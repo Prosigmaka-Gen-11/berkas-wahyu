@@ -1,0 +1,22 @@
+{
+  "biodata": [
+    {
+      "id": 1,
+      "nama": "Muhammad Wahyu Ilahi",
+      "tgl_lahir": "2001-07-12",
+      "jns_kelamin": "Laki-laki",
+      "agama": "Islam",
+      "jmlh_saudara": "3",
+      "keterangan": "Terbaikla"
+    },
+    {
+      "nama": "Michel",
+      "tgl_lahir": "2001-01-01",
+      "jns_kelamin": "Laki-Laki",
+      "agama": "Katholik",
+      "jmlh_saudara": "1",
+      "keterangan": "Anak Baik",
+      "id": 2
+    }
+  ]
+}
