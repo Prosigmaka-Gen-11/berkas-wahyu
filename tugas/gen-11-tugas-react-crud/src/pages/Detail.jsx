@@ -1,47 +1,83 @@
+import { Link } from "react-router-dom"
 import axios from "axios"
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
 
-export default function Detail(){
-    const params = useParams()
-    const [biodata, setBiodata] = useState({})
+const initialForm = {
+    nama: '',
+    tgl_lahir: '',
+    jns_kelamin: '',
+    agama: '',
+    jmlh_saudara: '',
+    keterangan: ''
+  }
 
-    async function getDetail(){
-        const res = await axios.get("http://localhost:3000/biodata/"+params.Id)
-        setBiodata(res.data)
+export default function List () {
+    const [biodata, setBiodata] = useState([])
+    const [formInput, setFormInput] = useState({ ...initialForm })
+
+    const isEditing = formInput.id
+
+    async function getBiodata () {
+        const result = await axios.get('http://localhost:3000/biodata')
+        setBiodata(result.data)
+    }
+
+    function handleInput (evt, inputName) {
+        setFormInput({ ...formInput, [inputName]: evt.target.value })
+    }
+
+    async function handleSubmit (evt) {
+        evt.preventDefault()
+
+        if (isEditing) {
+            await axios.put(`http://localhost:3000/biodata/${formInput.id}`, formInput)
+        } else {
+            await axios.post('http://localhost:3000/biodata', formInput)
+        }
+
+        getBiodata()
+        setFormInput({ ...initialForm })
+    }
+
+    function prepareEdit (biodata) {
+        setFormInput({ ...biodata })
+    }
+
+    async function deleteBiodata (id) {
+        await axios.delete(`http://localhost:3000/biodata/${id}`)
+        getBiodata()
     }
 
     useEffect(() => {
-        getDetail()
-    },[])
-    
+        getBiodata()
+    }, [])
+
     return <>
-        <h1>Detail Biodata</h1>
-        <table>
-            <tr>
-                <td>Nama : </td>
-                <td>{biodata.nama}</td>
-            </tr>
-            <tr>
-                <td>Tanggal Lahir : </td>
-                <td>{biodata.tgl_lahir}</td>
-            </tr>
-            <tr>
-                <td>Jenis Kelamin : </td>
-                <td>{biodata.jns_kelamin}</td>
-            </tr>
-            <tr>
-                <td>Agama : </td>
-                <td>{biodata.agama}</td>
-            </tr>
-            <tr>
-                <td>Jumlah Saudara : </td>
-                <td>{biodata.jmlh_saudara}</td>
-            </tr>
-            <tr>
-                <td>Keterangan : </td>
-                <td>{biodata.keterangan}</td>
-            </tr>
+         <center><h1>Halaman Detail</h1></center>
+         <Link to="/">Ke Home</Link>
+         <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Agama</th>
+                    <th>Jumlah Saudara</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                {biodata.map(biodata => 
+                <tr key={biodata.id}>
+                    <td>{biodata.nama}</td>
+                    <td>{biodata.tgl_lahir}</td>
+                    <td>{biodata.jns_kelamin}</td>
+                    <td>{biodata.agama}</td>
+                    <td>{biodata.jmlh_saudara}</td>
+                    <td>{biodata.keterangan}</td>
+                </tr>
+                )}
+            </tbody>
         </table>
     </>
 }

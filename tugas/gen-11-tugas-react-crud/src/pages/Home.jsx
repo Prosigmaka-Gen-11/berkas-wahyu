@@ -1,17 +1,12 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 export default function Home () {
     return <>
-        <h1>Home</h1>
-            <p>Choose your activity :</p>
-            <Link  to="/biodata/form">
-                <button>Order Now</button>
-            </Link>
-            <br />
-            <Link to="/biodata/list" >
-                <button>Order List</button>
-            </Link>
-
-        <Outlet/>        
+         <center><h1>Halaman Home</h1></center>
+         <Link to="/list">Halaman List</Link>
+         <br /><br />
+         <Link to="/form">Halaman Form</Link>
+         <br /><br />
+         <Link to="/detail">Halaman Detail</Link>
     </>
 }
