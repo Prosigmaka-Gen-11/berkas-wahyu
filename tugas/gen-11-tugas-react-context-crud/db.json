@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "nama": "Muhammad Wahyu Ilahi",
+      "umur": "21",
+      "alamat": "Palembang",
+      "laporan": "Sudah"
+    },
+    {
+      "id": 2,
+      "nama": "Nurdin",
+      "umur": "20",
+      "alamat": "Jakarta",
+      "laporan": "Belum"
+    },
+    {
+      "nama": "tes",
+      "umur": "1",
+      "alamat": "bandung",
+      "laporan": "Proses",
+      "id": 3
+    },
+    {
+      "nama": "tes",
+      "umur": "1",
+      "alamat": "palembang",
+      "id": 4
+    },
+    {
+      "nama": "TES TERAKHIR",
+      "umur": "100",
+      "alamat": "jakarta",
+      "laporan": "Sudah",
+      "id": 5
+    }
+  ]
+}
