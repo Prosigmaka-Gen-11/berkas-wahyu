@@ -1,6 +1,6 @@
 ~Login Logout (AUTH)~
 
-web : dummy authentication
+web : dummy authentication api
 install react router dom
 install axios
 buat rute di main.jsx = Home, Login dan About55
@@ -9,3 +9,10 @@ require = supaya gabs submit klo isinya kosong
 err request = pada device kek jaringan
 err response = pada server
 err message = alert
+
+supaya bisa di refresh = local storage 
+const userData = {
+name
+}
+utk jd in string = JSON.stringify(userData)
+LocalStorage.setItem('userData','haibambang'
